@@ -1,2 +1,19 @@
-config.js
+# Dependencies
+/node_modules
+/functions/node_modules
+
+# Supabase
+/supabase/.temp
+/supabase/functions/**/.npmrc
+
+# Firebase
+.firebase/
+*.log
+
+# Build output
+/public
+
+# Misc
+.DS_Store
 .env
+config.js
