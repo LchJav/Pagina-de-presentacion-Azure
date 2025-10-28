@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumLeap | Soluciones de Software con I.A.</title>
+    
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración Personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Habilitar modo oscuro basado en clase
+            theme: {
+                extend: {
+                    colors: {
+                        'deezer-purple': '#9000FF',
+                        'dark-gray': '#121212',
+                    },
+                    fontFamily: {
+                        'outfit': ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'glow': 'glow 2.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 5px #9000FF, 0 0 10px #9000FF, 0 0 15px #9000FF' },
+                            '50%': { boxShadow: '0 0 20px #9000FF, 0 0 30px #9000FF, 0 0 40px #9000FF' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Estilos CSS Adicionales -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-white text-dark-gray dark:bg-dark-gray dark:text-gray-200 font-outfit antialiased overflow-x-hidden transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-dark-gray/95 backdrop-blur-sm border-b border-transparent dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-dark-gray dark:text-white">Quantum<span class="text-deezer-purple">Leap</span></a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-dark-gray dark:text-gray-300 hover:text-deezer-purple transition-colors">Inicio</a>
+                <a href="#servicios" class="text-dark-gray dark:text-gray-300 hover:text-deezer-purple transition-colors">Servicios</a>
+                <a href="#beneficios" class="text-dark-gray dark:text-gray-300 hover:text-deezer-purple transition-colors">Beneficios</a>
+                <a href="tienda.html" class="text-dark-gray dark:text-gray-300 hover:text-deezer-purple transition-colors">Tienda</a>
+                <a href="#contacto" class="text-dark-gray dark:text-gray-300 hover:text-deezer-purple transition-colors">Contacto</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="open-diagnosis-btn-header" class="hidden md:block bg-dark-gray text-white px-4 py-2 rounded-lg hover:bg-deezer-purple transition-colors">Diagnóstico Rápido</button>
+                <button id="cart-btn" class="relative text-dark-gray dark:text-white hover:text-deezer-purple transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-deezer-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden bg-white dark:bg-dark-gray">
+            <div id="svg-clouds-container" class="absolute inset-0 z-0">
+                <!-- La animación de nubes SVG se insertará aquí -->
+            </div>
+            <div class="relative z-10 px-6">
+                <h1 class="text-5xl md:text-7xl font-black text-dark-gray dark:text-white leading-tight">
+                    Software que <span class="text-deezer-purple">Piensa</span>,
+                    <br>
+                    Resultados que <span class="text-deezer-purple">Impactan</span>.
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Utilizamos inteligencia artificial para diagnosticar, optimizar y proteger tu sistema con una precisión sin precedentes.
+                </p>
+                <div class="mt-8">
+                    <button id="open-diagnosis-btn-hero" class="bg-deezer-purple text-white font-bold py-3 px-8 rounded-lg text-lg hover:scale-105 transition-transform">
+                        Iniciar Diagnóstico Rápido
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <div class="diagonal-separator bg-dark-gray">
+            <section id="servicios" class="py-24">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-white mb-12">Nuestros Servicios Potenciados por I.A.</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Service Card 1 -->
+                        <div class="bg-dark-gray border border-deezer-purple/20 p-8 rounded-xl hover:border-deezer-purple/80 hover:-translate-y-2 transition-all">
+                            <div class="text-deezer-purple mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Limpieza y Mantenimiento</h3>
+                            <p class="text-gray-400">Eliminamos archivos basura y optimizamos el registro para una velocidad máxima.</p>
+                        </div>
+                        <!-- Service Card 2 -->
+                        <div class="bg-dark-gray border border-deezer-purple/20 p-8 rounded-xl hover:border-deezer-purple/80 hover:-translate-y-2 transition-all">
+                            <div class="text-deezer-purple mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Instalación de Antivirus</h3>
+                            <p class="text-gray-400">Protección en tiempo real contra malware, ransomware y amenazas online.</p>
+                        </div>
+                        <!-- Service Card 3 -->
+                        <div class="bg-dark-gray border border-deezer-purple/20 p-8 rounded-xl hover:border-deezer-purple/80 hover:-translate-y-2 transition-all">
+                            <div class="text-deezer-purple mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Optimización del Sistema</h3>
+                            <p class="text-gray-400">Ajustes de rendimiento personalizados para tu hardware y software específicos.</p>
+                        </div>
+                        <!-- Service Card 4 -->
+                        <div class="bg-dark-gray border border-deezer-purple/20 p-8 rounded-xl hover:border-deezer-purple/80 hover:-translate-y-2 transition-all">
+                            <div class="text-deezer-purple mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Instalación y Configuración</h3>
+                            <p class="text-gray-400">Instalamos y configuramos cualquier software para un funcionamiento óptimo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Benefits Section -->
+        <section id="beneficios" class="relative py-24 bg-white dark:bg-dark-gray overflow-hidden">
+            <div id="wave-pattern-svg-container" class="absolute inset-0 z-0 opacity-20">
+                <!-- La animación de ondas interactivas se insertará aquí -->
+            </div>
+            <div class="relative z-10 container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-deezer-purple mb-12">Más Allá del Código</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-dark-gray dark:text-white mb-2">Diagnóstico Preciso</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Nuestra I.A. identifica la raíz del problema, no solo los síntomas, ahorrándote tiempo y dinero.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-dark-gray dark:text-white mb-2">Rendimiento Sostenible</h3>
+                        <p class="text-gray-600 dark:text-gray-400">No solo reparamos, optimizamos tu sistema para que se mantenga rápido a largo plazo.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-dark-gray dark:text-white mb-2">Soporte Inteligente</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Obtén respuestas claras y soluciones efectivas basadas en un análisis de datos real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <div class="diagonal-separator bg-dark-gray">
+            <section class="py-24">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-white mb-12">Lo que dicen nuestros clientes</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                        <blockquote class="p-6 bg-dark-gray border-l-4 border-deezer-purple">
+                            <p class="text-gray-300 italic">"El diagnóstico por I.A. fue increíblemente acertado. En minutos supe que necesitaba una optimización y el servicio fue impecable. Mi PC vuela."</p>
+                            <footer class="mt-4 text-white font-bold">- Ana García, Diseñadora Gráfica</footer>
+                        </blockquote>
+                        <blockquote class="p-6 bg-dark-gray border-l-4 border-deezer-purple">
+                            <p class="text-gray-300 italic">"Tenía un problema de malware persistente. El servicio de antivirus no solo lo eliminó, sino que me explicó cómo evitarlo. 100% recomendado."</p>
+                            <footer class="mt-4 text-white font-bold">- Carlos Rodríguez, Desarrollador</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Final CTA Section -->
+        <section id="contacto" class="py-24 bg-deezer-purple/10 dark:bg-deezer-purple/20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-black text-dark-gray dark:text-white mb-6">¿Listo para una experiencia de software superior?</h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">Deja que nuestra I.A. te dé un primer vistazo gratuito a la salud de tu sistema.</p>
+                <button id="open-diagnosis-btn-cta" class="bg-deezer-purple text-white font-bold py-4 px-10 rounded-lg text-xl animate-glow transition-transform hover:scale-105">
+                    Diagnóstico con I.A. ✨
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-gray-500 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 QuantumLeap. Todos los derechos reservados.</p>
+            <p>Construido con <span class="text-deezer-purple">♥</span> y código inteligente.</p>
+        </div>
+    </footer>
+
+    <!-- Diagnosis Modal -->
+    <div id="diagnosis-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-lg p-8 relative">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-dark-gray dark:hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <h3 class="text-2xl font-bold text-dark-gray dark:text-white mb-4">Diagnóstico con I.A.</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">Describe tu problema de la forma más detallada posible. Por ejemplo: "Mi laptop se ha vuelto muy lenta al abrir programas" o "Me aparece un error extraño al iniciar Windows".</p>
+            
+            <form id="diagnosis-form">
+                <textarea id="problem-description" class="w-full h-32 p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-dark-gray dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-deezer-purple focus:border-transparent transition" placeholder="Escribe aquí tu problema..."></textarea>
+                <button type="submit" id="submit-diagnosis-btn" class="w-full mt-4 bg-deezer-purple text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center">
+                    <span id="submit-text">Analizar Problema</span>
+                    <svg id="loading-spinner" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+            </form>
+
+            <div id="diagnosis-result" class="mt-6 hidden">
+                <h4 class="font-bold text-lg text-dark-gray dark:text-white">Resultado del Análisis:</h4>
+                <div id="result-content" class="mt-2 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg text-gray-800 dark:text-gray-300"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark-gray z-50 hidden">
+        <div class="flex justify-end p-6">
+            <button id="close-mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center justify-center h-full space-y-8 -mt-16">
+            <a href="#" class="text-white text-3xl font-bold">Inicio</a>
+            <a href="#servicios" class="text-white text-3xl font-bold">Servicios</a>
+            <a href="#beneficios" class="text-white text-3xl font-bold">Beneficios</a>
+            <a href="tienda.html" class="text-white text-3xl font-bold">Tienda</a>
+            <a href="#contacto" class="text-white text-3xl font-bold">Contacto</a>
+        </nav>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="theme.js"></script>
+    <script src="cart.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <!-- Cart Header -->
+        <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold">Tu Carrito</h2>
+            <button id="close-cart-btn" class="text-gray-500 hover:text-dark-gray dark:hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <!-- Cart Items -->
+        <div id="cart-items" class="flex-grow p-4 overflow-y-auto">
+            <!-- Los productos del carrito se insertarán aquí -->
+        </div>
+        <!-- Cart Footer -->
+        <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-lg font-bold">Total:</span>
+                <span id="cart-total" class="text-lg font-bold text-deezer-purple">$0.00</span>
+            </div>
+            <button class="w-full bg-deezer-purple text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors">Finalizar Compra</button>
+        </div>
+    </div>
+</body>
+</html>

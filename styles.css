@@ -1,0 +1,15 @@
+.diagonal-separator {
+    transform: skewY(-2.5deg);
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+.diagonal-separator > * {
+    transform: skewY(2.5deg);
+}
+.modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
