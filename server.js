@@ -16,10 +16,10 @@ app.use(express.json());
 // Ruta específica para servir index.html en la raíz
 app.get('/', (req, res) => {
     console.log('>>> Petición recibida en la ruta /');
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
-app.use(express.static(__dirname)); // Servir otros archivos estáticos
+app.use(express.static(path.join(__dirname, 'src'))); // Servir otros archivos estáticos
 
 // logging simple para verificar que la petición llega
 app.use((req, res, next) => {
