@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         diagnosisResult.classList.add('hidden');
 
         // Usamos el proxy local (no exponer la API key en el cliente)
-        const apiEndpoint = 'https://bbrnprdokqkiyofpsaxr.supabase.co/functions/v1/gemini-proxy';
+        const apiEndpoint = 'https://khateyirnxdxybirfbke.supabase.co/functions/v1/clever-responder';
 
         const systemInstruction = "Actúa como un técnico de software experto y amable. Analiza la descripción del problema de hardware o software del usuario. Devuelve un diagnóstico preliminar conciso y una sugerencia de qué servicio de la lista (Limpieza y Mantenimiento, Instalación de Antivirus, Optimización del Sistema, Instalación y Configuración) es el más apropiado para resolverlo. Mantén la respuesta en español y no más de 50 palabras. Inicia la respuesta con 'Basado en tu descripción,'.";
 
