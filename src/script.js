@@ -202,7 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const responseData = await fetchWithExponentialBackoff(apiEndpoint, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtoYXRleWlybnhkeHliaXJmYmtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2NzY5OTgsImV4cCI6MjA3NzI1Mjk5OH0.DZWOYehbyNJjMcyyiLHjEKQvoEjHuSOaXLwulyz9U80'
+                },
                 body: JSON.stringify(payload)
             });
             const text = responseData.candidates[0].content.parts[0].text;
